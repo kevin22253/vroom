@@ -24,8 +24,10 @@ let selectedCarIndex = 0;
 // Load car images
 for (let i = 0; i < carOptions.length; i++) {
     const image = new Image();
-    image.src = `images/${carOptions[i]}`;
+    image.src = carOptions[i];
     carOptions[i] = image;
+}
+
 }
 
 car.image = carOptions[selectedCarIndex];
@@ -52,7 +54,7 @@ function drawMenu() {
 for (let i = 0; i < carOptions.length; i++) {
     const x = canvas.width / 2 - 60 + i * 120;
     const y = canvas.height / 2 - 50;
-    ctx.drawImage(carOptions[i], x, y, 60, 100); // Updated path
+    ctx.drawImage(carOptions[i], x, y, 60, 100);
 
     if (i === selectedCarIndex) {
         ctx.strokeStyle = 'blue';
